@@ -80,3 +80,8 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+function getAcf( array ) {
+  
+}

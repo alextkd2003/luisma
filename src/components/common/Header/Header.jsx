@@ -1,23 +1,25 @@
 import React from 'react';
-import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io";
 import './Header.scss';
 
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Luisma</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
+        <Navbar bg="white" expand="lg" className="nav-bar">
+        <Navbar.Brand href="#home" className="logo">Luisma</Navbar.Brand>
+        <Navbar.Toggle aria-controls="luisma-navbar-nav" />
+        <Navbar.Collapse id="luisma-navbar-nav">
+            <Nav className="mr-auto py-0">
+                <Nav.Link className="nav-link" href="#home">Home</Nav.Link>
+                <Nav.Link className="nav-link" href="#link">Carpentry Services</Nav.Link>
+                <Nav.Link className="nav-link" href="#link">Ac Services</Nav.Link>
+                <Nav.Link className="nav-link" href="#link">Contact Us</Nav.Link>
+                <Nav.Link className="nav-link" href="#link">Testimonies</Nav.Link>
+            </Nav>
+            <Nav className="ml-auto">
+                <Nav.Link className="nav-link h3" href="#link"><IoLogoInstagram/></Nav.Link>
+                <Nav.Link className="nav-link h3" href="#link"><IoLogoFacebook /></Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>

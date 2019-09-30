@@ -1,0 +1,1 @@
+export const endPoint = "http://luisma-admin.aleeli.us/wp-json/wp/v2";

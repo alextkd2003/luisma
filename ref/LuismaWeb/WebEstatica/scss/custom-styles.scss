@@ -1,0 +1,130 @@
+// Your custom styles
+$maxWidth: 1200px;
+
+html {
+    background: gainsboro;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: gainsboro;
+
+    #body-wrapper {
+        background: white !important;
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        header {
+            max-width: 1200px;
+        
+            nav:first-child { 
+            > * { 
+                    padding: 0 1rem;
+                }
+        
+            >:first-child {
+                padding-left: 0;
+            }
+        
+                .request {
+                    padding: 0.1rem 0.8rem;
+                }
+            }
+        
+            nav {
+                padding: 0 2rem;
+                a {
+                    font-family: 'Roboto', sans-serif;
+            
+                    &.luisma {
+                        font-family: 'Kaushan Script', cursive;
+                        font-size: 2rem;
+                        color: #ff5252 !important;
+                    }
+                }
+            } 
+        }
+        
+        footer nav.navbar {
+            box-shadow: none;
+        }
+    }
+}
+
+hr {
+    border-top: 1px solid red;
+    margin: 0 2rem;
+}
+
+#hero-carousel-container {
+    margin-top: 118px;
+
+    @media( max-width: 767px ) {
+        margin-top: 60px;
+    }
+    // @media( min-width: 768px ) {
+    //     margin-top: 60px;
+    // }
+
+    .carousel-caption {
+        bottom: 5% !important;
+        // text-shadow: 2px 2px 4px grey;
+        // text-transform: uppercase;
+        font-weight: bold;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2, p {
+            background: #00000094;
+            border-radius: 2px;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+
+            @media( max-width: 768px ) {
+                font-size: 15px;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+#heroCarousel span[class^="carousel-control"] {
+    width: 5rem;
+    height: 5rem;
+}
+
+main {
+    h3 {
+        font-size: 2rem;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+.services .card-deck {
+    margin-top: 2rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+// air conditioner services
+
+main.main-no-home {
+    margin-top: 60px;
+
+    h3:first-child {
+        padding-top: 4rem;
+    }
+
+    ul li::before {
+        content: '- ';
+    }
+    
+}

@@ -4,7 +4,7 @@ import {Form, Button} from 'react-bootstrap';
 export default class ContactForm extends Component {
   render() {
     return (
-      <Form className="px-0 px-md-5">
+      <Form className="px-0 px-md-2">
         <Form.Group controlId="">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="email" />

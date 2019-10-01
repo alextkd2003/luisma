@@ -7,7 +7,7 @@ import './Footer.scss';
 const Footer = () => {
     return (
         <Navbar className="nav-bar-footer d-flex flex-column justify-content-center align-items-center">
-          <Nav className="py-0">
+          <Nav className="py-0 d-flex flex-column flex-sm-row text-center">
               <Nav.Link className="nav-link" href="#home">Home</Nav.Link>
               <Nav.Link className="nav-link" href="#link">Carpentry Services</Nav.Link>
               <Nav.Link className="nav-link" href="#link">Ac Services</Nav.Link>

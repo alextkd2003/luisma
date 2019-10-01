@@ -21,7 +21,9 @@ export default class App extends React.Component {
     this.state = {
         carousel_images: [],
         contacts: [],
-        home_data: []
+        home: [],
+        ac: [],
+        testimonies: []
     }
 }
 
@@ -54,10 +56,32 @@ export default class App extends React.Component {
           console.log('home:', data);
           this.setState({
             ...this.state,
-            home_data: data
+            home: data
           })
       } )
       .catch( error => console.log('error to fetch home') );
+    
+    fetch( endPoint + '/ac' )
+      .then( res => res.json() )
+      .then( data => {
+          console.log('ac:', data);
+          this.setState({
+            ...this.state,
+            ac: data
+          })
+      } )
+      .catch( error => console.log('error to fetch testimonies') );
+
+    fetch( endPoint + '/testimonies' )
+      .then( res => res.json() )
+      .then( data => {
+          console.log('testimonies:', data);
+          this.setState({
+            ...this.state,
+            testimonies: data
+          })
+      } )
+      .catch( error => console.log('error to fetch testimonies') );
   }
 
   render() {
@@ -66,16 +90,32 @@ export default class App extends React.Component {
         <Router>
           <HeaderUpper contacts={ this.state.contacts } />
           <Header />
+          <hr className="header-separator" />
           <Switch>
             <Route exact path='/' 
               render={(props) => 
                 <Home {...props} 
                   carousel_images={this.state.carousel_images} 
-                  home_data={this.state.home_data} />}/>
+                  home={this.state.home} />}/>
+            
             <Route exact path='/carpentry' component={ Carpentry } />
-            <Route exact path='/ac' component={ Ac } />
-            <Route exact path='/contactus' component={ ContactUs } />
-            <Route exact path='/testimonies' component={ Testimonies } />
+            
+            <Route exact path='/ac' 
+              render={(props) => 
+                <Ac {...props} 
+                  ac={this.state.ac} />}/>
+
+            <Route exact path='/contactus' 
+              render={(props) => 
+                <ContactUs 
+                  contacts={ this.state.contacts }/>}/>
+            
+            <Route exact path='/testimonies'
+              render={(props) => 
+                <Testimonies 
+                  {...props} 
+                  testimonies={this.state.testimonies}
+                />}/>
             <Route path='*' render={ () => (<Redirect to="/" />) } />
           </Switch>
           <Footer />

@@ -1,5 +1,15 @@
+$primary: #ff5252 !important;
+
 .nav-bar {
   margin-top: 58px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 102%;
+  z-index: 100;
+  max-width: 1200px;
+
 
   .nav-link {
     text-transform: uppercase;
@@ -8,6 +18,14 @@
   .logo {
     font-family: 'Kaushan Script', cursive;
     font-size: 2rem;
-    color: #ff5252 !important;
+    color: $primary;
+  }
+
+  .social {
+    color: $primary;
+  }
+
+  @media (max-width: 576px) { 
+    margin-top: 0;
   }
 }

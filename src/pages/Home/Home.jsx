@@ -3,7 +3,7 @@ import {Carousel, Container, Row, Col, Card, Button} from 'react-bootstrap';
 import ContactForm from '../../components/common/ContactForm/ContactForm';
 import './Home.scss';
 
-const Home = ({carousel_images, home_data}) => {
+const Home = ({carousel_images, home}) => {
     return (
         <>
             <Carousel>
@@ -33,8 +33,8 @@ const Home = ({carousel_images, home_data}) => {
                 <Row className="section-red py-4 my-2 text-align-justify">
                     <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={4}>
                         <img 
-                            src={home_data[0] ? 
-                                home_data[0].acf.block1_img.url : 
+                            src={home[0] ? 
+                                home[0].acf.block1_img.url : 
                                 null} alt=""
                             className="img-fluid shadow rounded"
                         />
@@ -42,23 +42,23 @@ const Home = ({carousel_images, home_data}) => {
                     <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={8}>
                         <h2 
                             className="text-left font-weight-light py-2">
-                            { home_data[0] ? home_data[0].acf.block1_title : null }
+                            { home[0] ? home[0].acf.block1_title : null }
                         </h2>
-                        <p>{ home_data[0] ? home_data[0].acf.block1_text : null}</p>
+                        <p>{ home[0] ? home[0].acf.block1_text : null}</p>
                     </Col>
                 </Row>
                 <Row className="py-4 my-2 text-align-justify flex-md-row flex-column-reverse">
                     <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={8}>
                         <h2 
                             className="text-left font-weight-light py-2">
-                            { home_data[0] ? home_data[0].acf.block2_title : null }
+                            { home[0] ? home[0].acf.block2_title : null }
                         </h2>
-                        <p>{ home_data[0] ? home_data[0].acf.block2_text : null}</p>
+                        <p>{ home[0] ? home[0].acf.block2_text : null}</p>
                     </Col>
                     <Col className="d-flex justify-content-center flex-column py-4" xs={12} md={4}>
                         <img 
-                            src={home_data[0] ? 
-                                home_data[0].acf.block2_img.url : 
+                            src={home[0] ? 
+                                home[0].acf.block2_img.url : 
                                 null} alt=""
                             className="img-fluid shadow rounded"
                         />
@@ -77,13 +77,13 @@ const Home = ({carousel_images, home_data}) => {
                 <Row className="py-4 my-2 text-align-justify justify-content-start align-items-start">
                     <Col className="d-flex justify-content-center">
                     {
-                        home_data[0] ?
+                        home[0] ?
                             <Card style={{ width: '90%' }} className="shadow">
-                                <Card.Img variant="top" src={home_data[0].acf.service1_img.url}/>
+                                <Card.Img variant="top" src={home[0].acf.service1_img.url}/>
                                 <Card.Body>
-                                    <Card.Title>{home_data[0].acf.service1_title}</Card.Title>
+                                    <Card.Title>{home[0].acf.service1_title}</Card.Title>
                                     <Card.Text>
-                                    {home_data[0].acf.service1_text}
+                                    {home[0].acf.service1_text}
                                     </Card.Text>
                                     <Button variant="primary">Read More</Button>
                                 </Card.Body>
@@ -93,13 +93,13 @@ const Home = ({carousel_images, home_data}) => {
                     </Col>
                     <Col className="d-flex justify-content-center">
                     {
-                        home_data[0] ?
+                        home[0] ?
                             <Card style={{ width: '90%' }} className="shadow">
-                                <Card.Img variant="top" src={home_data[0].acf.service2_img.url}/>
+                                <Card.Img variant="top" src={home[0].acf.service2_img.url}/>
                                 <Card.Body>
-                                    <Card.Title>{home_data[0].acf.service2_title}</Card.Title>
+                                    <Card.Title>{home[0].acf.service2_title}</Card.Title>
                                     <Card.Text>
-                                    {home_data[0].acf.service2_text}
+                                    {home[0].acf.service2_text}
                                     </Card.Text>
                                     <Button variant="primary">Read More</Button>
                                 </Card.Body>

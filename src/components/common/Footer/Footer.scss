@@ -1,0 +1,19 @@
+$primary: #ff5252;
+
+.nav-bar-footer {
+    background: $primary;
+
+    a, a:active, a:visited {
+        color: white !important;
+
+        &:hover {
+            color: gainsboro !important;
+        }
+    }
+
+    p {
+        color: #ff9b9b;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+}

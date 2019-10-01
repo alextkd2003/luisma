@@ -1,0 +1,15 @@
+$primary: #ff5252;
+
+.section-red {
+    background: $primary;
+    color: white;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+}
+    
+    hr {
+        border-top: 1px solid $primary;
+    }

@@ -40,7 +40,7 @@ export default class App extends React.Component {
     fetch( endPoint + '/contacts' )
       .then( res => res.json() )
       .then( data => {
-          console.log('contacts:', data);
+          console.log('contacts: ', data);
           this.setState({
             ...this.state,
             contacts: data
@@ -54,10 +54,10 @@ export default class App extends React.Component {
           console.log('home:', data);
           this.setState({
             ...this.state,
-            contacts: data
+            home_data: data
           })
       } )
-      .catch( error => console.log('error to fetch contact') );
+      .catch( error => console.log('error to fetch home') );
   }
 
   render() {
@@ -67,7 +67,11 @@ export default class App extends React.Component {
           <HeaderUpper contacts={ this.state.contacts } />
           <Header />
           <Switch>
-            <Route exact path='/' render={(props) => <Home {...props} carousel={this.state.carousel_images} />} />
+            <Route exact path='/' 
+              render={(props) => 
+                <Home {...props} 
+                  carousel_images={this.state.carousel_images} 
+                  home_data={this.state.home_data} />}/>
             <Route exact path='/carpentry' component={ Carpentry } />
             <Route exact path='/ac' component={ Ac } />
             <Route exact path='/contactus' component={ ContactUs } />
@@ -80,7 +84,6 @@ export default class App extends React.Component {
     );
   }
 }
-
 
 function getAcf( array ) {
   

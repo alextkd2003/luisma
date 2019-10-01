@@ -1,13 +1,14 @@
 import React from 'react';
-import {Carousel, Container, Row, Col} from 'react-bootstrap';
+import {Carousel, Container, Row, Col, Card, Button} from 'react-bootstrap';
 import ContactForm from '../../components/common/ContactForm/ContactForm';
+import './Home.scss';
 
-const Home = props => {
+const Home = ({carousel_images, home_data}) => {
     return (
         <>
             <Carousel>
                 {
-                    props.carousel.map( (carousel,index) => 
+                    carousel_images.map( (carousel,index) => 
                     <Carousel.Item key={index}>
                             <img
                                 className="d-block w-100"
@@ -20,22 +21,91 @@ const Home = props => {
                             </Carousel.Caption>
                         </Carousel.Item>
                         )
-                    }
+                }
             </Carousel>
             <Container fluid={true}>
-                <Row>
+                <Row className="py-4 my-2">
                     <Col>
-                        <h2 className="text-center pt-5 font-weight-light">Contact Us</h2>
+                        <h2 className="text-center py-2 font-weight-light">Contact Us</h2>
                         <ContactForm />
+                    </Col>
+                </Row>
+                <Row className="section-red py-4 my-2 text-align-justify">
+                    <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={4}>
+                        <img 
+                            src={home_data[0] ? 
+                                home_data[0].acf.block1_img.url : 
+                                null} alt=""
+                            className="img-fluid shadow rounded"
+                        />
+                    </Col>
+                    <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={8}>
+                        <h2 
+                            className="text-left font-weight-light py-2">
+                            { home_data[0] ? home_data[0].acf.block1_title : null }
+                        </h2>
+                        <p>{ home_data[0] ? home_data[0].acf.block1_text : null}</p>
+                    </Col>
+                </Row>
+                <Row className="py-4 my-2 text-align-justify flex-md-row flex-column-reverse">
+                    <Col className="d-flex justify-content-center flex-column py-4 " xs={12} md={8}>
+                        <h2 
+                            className="text-left font-weight-light py-2">
+                            { home_data[0] ? home_data[0].acf.block2_title : null }
+                        </h2>
+                        <p>{ home_data[0] ? home_data[0].acf.block2_text : null}</p>
+                    </Col>
+                    <Col className="d-flex justify-content-center flex-column py-4" xs={12} md={4}>
+                        <img 
+                            src={home_data[0] ? 
+                                home_data[0].acf.block2_img.url : 
+                                null} alt=""
+                            className="img-fluid shadow rounded"
+                        />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <img src="" alt=""/>
+                        <hr />
                     </Col>
+                </Row>
+                <Row>
                     <Col>
-                        <h2 className="text-center pt-5 font-weight-light">Carpenters at work</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita culpa mollitia, reiciendis iste ullam odio iure ipsam velit hic itaque corrupti ratione numquam ipsum repellat laudantium eius vitae repellendus ducimus?</p>
+                        <h2 className="text-center py-2 font-weight-light">Our Services</h2>
+                    </Col>
+                </Row>
+                <Row className="py-4 my-2 text-align-justify justify-content-start align-items-start">
+                    <Col className="d-flex justify-content-center">
+                    {
+                        home_data[0] ?
+                            <Card style={{ width: '90%' }} className="shadow">
+                                <Card.Img variant="top" src={home_data[0].acf.service1_img.url}/>
+                                <Card.Body>
+                                    <Card.Title>{home_data[0].acf.service1_title}</Card.Title>
+                                    <Card.Text>
+                                    {home_data[0].acf.service1_text}
+                                    </Card.Text>
+                                    <Button variant="primary">Read More</Button>
+                                </Card.Body>
+                            </Card> :
+                            null
+                    }
+                    </Col>
+                    <Col className="d-flex justify-content-center">
+                    {
+                        home_data[0] ?
+                            <Card style={{ width: '90%' }} className="shadow">
+                                <Card.Img variant="top" src={home_data[0].acf.service2_img.url}/>
+                                <Card.Body>
+                                    <Card.Title>{home_data[0].acf.service2_title}</Card.Title>
+                                    <Card.Text>
+                                    {home_data[0].acf.service2_text}
+                                    </Card.Text>
+                                    <Button variant="primary">Read More</Button>
+                                </Card.Body>
+                            </Card> :
+                            null
+                    }
                     </Col>
                 </Row>
             </Container>

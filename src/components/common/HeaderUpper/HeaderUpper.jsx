@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Navbar} from 'react-bootstrap';
+import './HeaderUpper.scss';
 
 const HeaderUpper = ({contacts})=> {
     return (
-        <Navbar style={{height: '58px', backgroundColor: '#ff5252'}} className="py-0 my-0 align-items-start flex-column fixed-top">
+        <Navbar style={{}} className="py-0 my-0 align-items-start flex-column header-upper">
             <p className="text-white font-weight-bold p-0 m-0">Woodworking and Air Conditioning Services</p>
             <div className="d-flex justify-content-center align-items-center">
                 <a className="btn btn-secondary py-0 text-uppercase shadow " 

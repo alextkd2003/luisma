@@ -1,0 +1,11 @@
+.header-upper {
+    position: fixed;
+    top: 0;   
+    left: 50%;
+    transform: translateX( -50% ); 
+    width: 100%;
+    z-index: 100;
+    max-width: 1200px;
+    height: 58px;
+    background-color: #ff5252;
+}

@@ -11,7 +11,7 @@ const Header = ({social}) => {
         if ( socialData ) {
             if ( socialData.facebook !== '' ) {
                 return(
-                        <Nav.Link className="nav-link h3 social" href={ socialData.facebook }><IoLogoFacebook/></Nav.Link> : null
+                        <Nav.Link className="nav-link h3 social" href={ socialData.facebook }><IoLogoFacebook/></Nav.Link>
                 )
             }
         }
@@ -30,7 +30,7 @@ const Header = ({social}) => {
 
     return (
         <Navbar bg="white" expand="lg" className="nav-bar shadow">
-        <Navbar.Brand href="#home" className="logo">Luisma</Navbar.Brand>
+        <NavLink to="/" className="logo">Luisma</NavLink>
         <Navbar.Toggle aria-controls="luisma-navbar-nav" />
         <Navbar.Collapse id="luisma-navbar-nav">
             <Nav className="mr-auto py-0">

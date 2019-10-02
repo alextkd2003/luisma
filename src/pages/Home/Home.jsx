@@ -3,7 +3,7 @@ import {Carousel, Container, Row, Col, Card, Button} from 'react-bootstrap';
 import ContactForm from '../../components/common/ContactForm/ContactForm';
 import './Home.scss';
 
-const Home = ({carousel_images, home}) => {
+const Home = ({carousel_images, home, history, contacts}) => {
     return (
         <>
             <Carousel>
@@ -25,9 +25,9 @@ const Home = ({carousel_images, home}) => {
             </Carousel>
             <Container fluid={true}>
                 <Row className="py-4 my-2">
-                    <Col>
+                    <Col className="d-flex flex-column">
                         <h2 className="text-center py-2 font-weight-light">Contact Us</h2>
-                        <ContactForm />
+                        <ContactForm contacts={contacts}/>
                     </Col>
                 </Row>
                 <Row className="section-red py-4 my-2 text-align-justify">
@@ -85,7 +85,11 @@ const Home = ({carousel_images, home}) => {
                                     <Card.Text>
                                     {home[0].acf.service1_text}
                                     </Card.Text>
-                                    <Button variant="primary">Read More</Button>
+                                    <Button variant="primary" 
+                                        onClick={
+                                            () => history.push('/carpentry')}>
+                                            Read More
+                                    </Button>
                                 </Card.Body>
                             </Card> :
                             null
@@ -101,7 +105,11 @@ const Home = ({carousel_images, home}) => {
                                     <Card.Text>
                                     {home[0].acf.service2_text}
                                     </Card.Text>
-                                    <Button variant="primary">Read More</Button>
+                                    <Button variant="primary" 
+                                        onClick={
+                                            () => history.push('/ac')}>
+                                            Read More
+                                    </Button>
                                 </Card.Body>
                             </Card> :
                             null

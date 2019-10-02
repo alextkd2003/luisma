@@ -9,7 +9,7 @@ $primary: #ff5252 !important;
   width: 102%;
   z-index: 100;
   max-width: 1200px;
-
+  height: 74px;
 
   .nav-link {
     text-transform: uppercase;
@@ -19,6 +19,7 @@ $primary: #ff5252 !important;
     font-family: 'Kaushan Script', cursive;
     font-size: 2rem;
     color: $primary;
+    margin: 0 1rem 0.5rem 0;
   }
 
   .social {

@@ -13,13 +13,13 @@ export default class ContactUs extends Component {
                         <div className="d-flex justify-content-center align-items-center flex-column">
                             <h5 className="text-left">You can reach us using differents methods:</h5>
                             <ul className="list-unstyled">
-                                <li>Via email at lorem@lorem.lorem</li>
+                                <li>Via email at { contacts[0] ? contacts[0].acf.email : null }</li>
                                 <li>Via phone at { contacts[0] ? contacts[0].acf.phonenumber : null }</li>
                             </ul>
-                            <h5 className="mt-4"><strong>Using the contact form</strong></h5>
+                            <h5 className="mt-4"><strong>Contact Us</strong></h5>
                         </div>
                         
-                        <ContactForm />
+                        <ContactForm contacts={contacts} />
                     </Col>
                 </Row>
             </Container>

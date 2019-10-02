@@ -106,7 +106,8 @@ export default class App extends React.Component {
             <Route exact path='/' 
               render={(props) => 
                 <Home {...props} 
-                  carousel_images={this.state.carousel_images} 
+                  carousel_images={this.state.carousel_images}
+                  contacts={ this.state.contacts } 
                   home={this.state.home} />}/>
             
             <Route exact path='/carpentry' component={ Carpentry } />
@@ -114,7 +115,8 @@ export default class App extends React.Component {
             <Route exact path='/ac' 
               render={(props) => 
                 <Ac {...props} 
-                  ac={this.state.ac} />}/>
+                  ac={this.state.ac} 
+                  contacts={ this.state.contacts} />}/>
 
             <Route exact path='/contactus' 
               render={(props) => 

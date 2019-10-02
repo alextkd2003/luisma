@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
 import { endPoint } from './config/fetchClient';
 
 //component
@@ -20,6 +19,7 @@ export default class App extends React.Component {
     super( props );
     this.state = {
         carousel_images: [],
+        social: [],
         contacts: [],
         home: [],
         ac: [],
@@ -35,6 +35,17 @@ export default class App extends React.Component {
           this.setState({
             ...this.state,
             carousel_images: data
+          })
+      } )
+      .catch( error => console.log('error to load carousel images') );
+
+    fetch( endPoint + '/social' )
+      .then( res => res.json() )
+      .then( data => {
+          console.log('social:', data);
+          this.setState({
+            ...this.state,
+            social: data
           })
       } )
       .catch( error => console.log('error to load carousel images') );
@@ -89,7 +100,7 @@ export default class App extends React.Component {
       <div className="App">
         <Router>
           <HeaderUpper contacts={ this.state.contacts } />
-          <Header />
+          <Header social={ this.state.social } />
           <hr className="header-separator" />
           <Switch>
             <Route exact path='/' 
@@ -118,13 +129,9 @@ export default class App extends React.Component {
                 />}/>
             <Route path='*' render={ () => (<Redirect to="/" />) } />
           </Switch>
-          <Footer />
+          <Footer social={ this.state.social } />
         </Router>
       </div>
     );
   }
-}
-
-function getAcf( array ) {
-  
 }

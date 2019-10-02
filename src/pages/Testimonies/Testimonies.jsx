@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {IoIosHappy} from 'react-icons/io';
 import {Container, Row, Col} from 'react-bootstrap';
 import './Testimonies.scss';

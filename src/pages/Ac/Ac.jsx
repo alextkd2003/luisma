@@ -19,11 +19,11 @@ const Ac = ({ac}) => {
                 <Col>
                     <div className="card-deck mb-5">
                         <div className="card">
-                            <img className="card-img-top" src={data ? data['card1-img'].url : null} alt="Card image cap" />
+                            <img className="card-img-top" src={data ? data['card1-img'].url : null} alt={data ? data['card1-img'].alt : null} />
                             <div dangerouslySetInnerHTML={ {__html: data ? data['card1-body'] : null }}></div>
                         </div>
                         <div className="card">
-                            <img className="card-img-top" src={data ? data['card2-img'].url : null} alt="Card image cap" />
+                            <img className="card-img-top" src={data ? data['card2-img'].url : null} alt={data ? data['card2-img'].alt : null} />
                             <div dangerouslySetInnerHTML={ {__html: data ? data['card2-body'] : null }}></div>
                         </div>
                     </div>

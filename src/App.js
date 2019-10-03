@@ -23,6 +23,7 @@ export default class App extends React.Component {
         contacts: [],
         home: [],
         ac: [],
+        carpentry: [],
         testimonies: []
     }
 }
@@ -31,7 +32,6 @@ export default class App extends React.Component {
     fetch( endPoint + '/carousels' )
       .then( res => res.json() )
       .then( data => {
-          console.log('images:', data);
           this.setState({
             ...this.state,
             carousel_images: data
@@ -42,7 +42,6 @@ export default class App extends React.Component {
     fetch( endPoint + '/social' )
       .then( res => res.json() )
       .then( data => {
-          console.log('social:', data);
           this.setState({
             ...this.state,
             social: data
@@ -53,7 +52,6 @@ export default class App extends React.Component {
     fetch( endPoint + '/contacts' )
       .then( res => res.json() )
       .then( data => {
-          console.log('contacts: ', data);
           this.setState({
             ...this.state,
             contacts: data
@@ -64,7 +62,6 @@ export default class App extends React.Component {
     fetch( endPoint + '/home' )
       .then( res => res.json() )
       .then( data => {
-          console.log('home:', data);
           this.setState({
             ...this.state,
             home: data
@@ -75,10 +72,19 @@ export default class App extends React.Component {
     fetch( endPoint + '/ac' )
       .then( res => res.json() )
       .then( data => {
-          console.log('ac:', data);
           this.setState({
             ...this.state,
             ac: data
+          })
+      } )
+      .catch( error => console.log('error to fetch testimonies') );
+    
+    fetch( endPoint + '/carpentry' )
+      .then( res => res.json() )
+      .then( data => {
+          this.setState({
+            ...this.state,
+            carpentry: data
           })
       } )
       .catch( error => console.log('error to fetch testimonies') );
@@ -86,7 +92,6 @@ export default class App extends React.Component {
     fetch( endPoint + '/testimonies' )
       .then( res => res.json() )
       .then( data => {
-          console.log('testimonies:', data);
           this.setState({
             ...this.state,
             testimonies: data
@@ -110,7 +115,11 @@ export default class App extends React.Component {
                   contacts={ this.state.contacts } 
                   home={this.state.home} />}/>
             
-            <Route exact path='/carpentry' component={ Carpentry } />
+            <Route exact path='/carpentry'
+              render={(props) => 
+                <Carpentry {...props} 
+                  carpentry={this.state.carpentry} 
+                  contacts={ this.state.contacts} />}/>
             
             <Route exact path='/ac' 
               render={(props) => 

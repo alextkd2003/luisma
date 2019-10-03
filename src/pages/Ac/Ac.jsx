@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom';
 
 const Ac = ({ac, contacts}) => {
     let data = ac[0] ? ac[0].acf : null; 
-    console.log(contacts);
-
     return (
         <Container fluid={true}>
             <Row className="py-4 my-2">

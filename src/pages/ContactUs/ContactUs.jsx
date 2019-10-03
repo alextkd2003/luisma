@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import ContactForm from '../../components/common/ContactForm/ContactForm';
 
 export default class ContactUs extends Component {
+
     render() {
         let {contacts} = this.props;
         return (

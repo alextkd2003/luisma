@@ -74,8 +74,8 @@ const Home = ({carousel_images, home, history, contacts}) => {
                         <h2 className="text-center py-2 font-weight-light">Our Services</h2>
                     </Col>
                 </Row>
-                <Row className="py-4 my-2 text-align-justify justify-content-start align-items-start">
-                    <Col className="d-flex justify-content-center">
+                <Row className="py-4 my-2 text-align-justify justify-content-start align-items-start flex-column flex-md-row justify-content-md-center">
+                    <Col className="d-flex justify-content-center my-1">
                     {
                         home[0] ?
                             <Card style={{ width: '90%' }} className="shadow">
@@ -95,7 +95,7 @@ const Home = ({carousel_images, home, history, contacts}) => {
                             null
                     }
                     </Col>
-                    <Col className="d-flex justify-content-center">
+                    <Col className="d-flex justify-content-center my-1">
                     {
                         home[0] ?
                             <Card style={{ width: '90%' }} className="shadow">

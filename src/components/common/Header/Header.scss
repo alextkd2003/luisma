@@ -10,6 +10,23 @@ $primary: #ff5252 !important;
   z-index: 100;
   max-width: 1200px;
   height: 74px;
+  transition: 0.5s all ease-in-out;
+
+  @media (max-width: 576px) { 
+    margin-top: 0;
+  }
+
+  #luisma-navbar-nav {
+
+    @media (max-width: 992px) { 
+      width: 100%;
+      left: 0;
+      top: 74px;
+      position: absolute;
+      padding: 1rem;
+      border-bottom: 1px solid gainsboro;
+    }
+  }
 
   .nav-link {
     text-transform: uppercase;
@@ -20,13 +37,14 @@ $primary: #ff5252 !important;
     font-size: 2rem;
     color: $primary;
     margin: 0 1rem 0.5rem 0;
+
+    @media (max-width: 576px) { 
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
   }
 
   .social {
     color: $primary;
-  }
-
-  @media (max-width: 576px) { 
-    margin-top: 0;
   }
 }

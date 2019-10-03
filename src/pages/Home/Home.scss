@@ -10,6 +10,14 @@ $primary: #ff5252;
     }
 }
     
-    hr {
-        border-top: 1px solid $primary;
+hr {
+    border-top: 1px solid $primary;
+}
+
+.carousel-item h3 {
+    background: #00000085;
+
+    @media (max-width: 576px) {
+        font-size: 1.2rem;
     }
+}
